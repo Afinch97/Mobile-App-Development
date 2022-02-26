@@ -1,6 +1,7 @@
 # fan_page
 
 A new Flutter project.
+Getting error running but only from utils don't know how to solve. welp
 
 ## Getting Started
 
