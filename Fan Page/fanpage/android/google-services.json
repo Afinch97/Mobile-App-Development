@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "72310219395",
+    "project_id": "fan-page-ed9b6",
+    "storage_bucket": "fan-page-ed9b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72310219395:android:c599b1f4d9684091a731b6",
+        "android_client_info": {
+          "package_name": "com.anthonyfinch.fanpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72310219395-pfc7cdd3rmshms62k1g9qbcq1jcu7c6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdhJw3RSPnrQYfMhIzOO8IgUlUtWlPlF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72310219395-pfc7cdd3rmshms62k1g9qbcq1jcu7c6j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "72310219395-oq8ni8e8h994cmg1s1et876d439nofak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
