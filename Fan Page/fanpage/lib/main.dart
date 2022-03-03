@@ -1,16 +1,20 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fanpage/pages/signup.dart';
 
 void main() {
-  // await Firebase.initializeApp();
+  //WidgetsFlutterBinding.ensureInitialized();
+  //await Firebase.initializeApp();
   WidgetsFlutterBinding();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  Future<FirebaseApp> initializer = Firebase.initializeApp();
+  //Future<FirebaseApp> initializer = Firebase.initializeApp();
+  var initializer = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {

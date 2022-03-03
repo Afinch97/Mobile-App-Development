@@ -1,7 +1,7 @@
 # fanpage
 
 A new Flutter project.
-I realized that the main reason my project didn't work to begin with is because my flutter was out of date smh. 
+I realized that the main reason my project didn't work to begin with is because my flutter was out of date smh. Got the app to stop crashing but wasn't able to create a functional log in page
 
 ## Getting Started
 

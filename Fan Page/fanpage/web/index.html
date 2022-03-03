@@ -38,20 +38,7 @@
     <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyA-B53QVeUtnqnzLgx6trDlJ6ZaFCwjtyY",
-            authDomain: "fan-page-ed9b6.firebaseapp.com",
-            databaseURL: "fan-page-ed9b6.firebaseio.com",
-            projectId: "fan-page-ed9b6",
-            storageBucket: "fan-page-ed9b6.appspot.com",
-            messagingSenderId: "72310219395",
-            appId: "1:72310219395:web:4a80614215ee5844a731b6",
-            measurementId: "G-4358CGG1QW"
-        };
-        firebase.initializeapp(firebaseConfig);
-    </script>
+    <!--
     <script>
         var serviceWorkerVersion = null;
         var scriptLoaded = false;
@@ -117,6 +104,23 @@
             loadMainDartJs();
         }
     </script>
+-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyA-B53QVeUtnqnzLgx6trDlJ6ZaFCwjtyY",
+            authDomain: "fan-page-ed9b6.firebaseapp.com",
+            database_url: "https://fan-page-ed9b6.firebaseio.com",
+            projectId: "fan-page-ed9b6",
+            storageBucket: "fan-page-ed9b6.appspot.com",
+            messagingSenderId: "72310219395",
+            appId: "1:72310219395:web:4a80614215ee5844a731b6",
+            measurementId: "G-4358CGG1QW"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="main.dart.js" type="application/javascript"></script>
 </body>
 
 </html>

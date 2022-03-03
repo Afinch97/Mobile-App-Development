@@ -6,12 +6,13 @@ import 'package:fanpage/user.dart';
 class UserList extends StatefulWidget {
   const UserList({Key? key}) : super(key: key);
 
+  @override
   State<UserList> createState() => _UserListState();
 }
 
 class _UserListState extends State<UserList> {
   CollectionReference users = FirebaseFirestore.instance.collection("users");
-  fa.FirebaseAuth _auth = fa.FirebaseAuth.instance;
+  final fa.FirebaseAuth _auth = fa.FirebaseAuth.instance;
   User? myself;
 
   @override

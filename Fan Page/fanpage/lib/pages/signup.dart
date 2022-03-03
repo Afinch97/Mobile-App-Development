@@ -10,9 +10,9 @@ class SignUpPage extends StatelessWidget {
 
   static String routename = "";
   final _formKey = GlobalKey<FormState>();
-  var _email = TextEditingController();
-  var _password = TextEditingController();
-  var _display = TextEditingController();
+  final _email = TextEditingController();
+  final _password = TextEditingController();
+  final _display = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class SignUpPage extends StatelessWidget {
                       _register(context);
                     }
                   },
-                  child: const Text("Reggister")),
+                  child: const Text("Register")),
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
@@ -79,30 +79,6 @@ class SignUpPage extends StatelessWidget {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text(
                 "This password is too insecure to be used for an account")));
-      }
-      return;
-    }
-
-    try {
-      await _db
-          .collection("users")
-          .doc(_auth.currentUser!.uid)
-          .set({"display_name": _display.text, "email": _email.text});
-    } on FirebaseException catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(e.message ?? "Uknown Error has taken place")));
-    }
-  }
-
-  void _login(BuildContext context) async {
-    try {
-      await _auth.signInWithEmailAndPassword(
-          email: _email.text, password: _password.text);
-      ScaffoldMessenger.of(context).clearSnackBars();
-    } on FirebaseException catch (e) {
-      if (e.code == 'user-not-found' || e.code == 'wrong-password') {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            content: Text("Email/Password combination is incorrect")));
       }
       return;
     }
