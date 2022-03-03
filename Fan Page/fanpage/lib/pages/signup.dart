@@ -8,6 +8,7 @@ class SignUpPage extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
+  static String routename = "";
   final _formKey = GlobalKey<FormState>();
   var _email = TextEditingController();
   var _password = TextEditingController();

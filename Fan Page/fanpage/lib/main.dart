@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:fanpage/pages/signup.dart';
 
 void main() {
+  // await Firebase.initializeApp();
   WidgetsFlutterBinding();
   runApp(MyApp());
 }
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           future: initializer,
           builder: (BuildContext context, AsyncSnapshot<FirebaseApp> snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              return SignUpPage(); //const MyHomePage(title: 'Flutter Demo Home Page');
+              return SignUpPage(); //const MyHomePage(title: 'Flutter Demo Home Page'); // SignUpPage();
             } else {
               return const Center(
                 child: CircularProgressIndicator(),
