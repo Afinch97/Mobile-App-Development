@@ -11,45 +11,25 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   List<ChatUsers> chatUsers = [
     ChatUsers(
-        text: "Jane Russel",
-        secondaryText: "Awesome Setup",
-        image: "images/userImage1.jpeg",
+        name: "Jane Russel",
+        messageText: "Awesome Setup",
+        imageURL: "images/userImage1.jpeg",
         time: "Now"),
     ChatUsers(
-        text: "Glady's Murphy",
-        secondaryText: "That's Great",
-        image: "images/userImage2.jpeg",
+        name: "Glady's Murphy",
+        messageText: "That's Great",
+        imageURL: "images/userImage2.jpeg",
         time: "Yesterday"),
     ChatUsers(
-        text: "Jorge Henry",
-        secondaryText: "Hey where are you?",
-        image: "images/userImage3.jpeg",
+        name: "Jorge Henry",
+        messageText: "Hey where are you?",
+        imageURL: "images/userImage3.jpeg",
         time: "31 Mar"),
     ChatUsers(
-        text: "Philip Fox",
-        secondaryText: "Busy! Call me in 20 mins",
-        image: "images/userImage4.jpeg",
+        name: "Philip Fox",
+        messageText: "Busy! Call me in 20 mins",
+        imageURL: "images/userImage4.jpeg",
         time: "28 Mar"),
-    ChatUsers(
-        text: "Debra Hawkins",
-        secondaryText: "Thankyou, It's awesome",
-        image: "images/userImage5.jpeg",
-        time: "23 Mar"),
-    ChatUsers(
-        text: "Jacob Pena",
-        secondaryText: "will update you in evening",
-        image: "images/userImage6.jpeg",
-        time: "17 Mar"),
-    ChatUsers(
-        text: "Andrey Jones",
-        secondaryText: "Can you please share the file?",
-        image: "images/userImage7.jpeg",
-        time: "24 Feb"),
-    ChatUsers(
-        text: "John Wick",
-        secondaryText: "How are you?",
-        image: "images/userImage8.jpeg",
-        time: "18 Feb"),
   ];
 
   @override
