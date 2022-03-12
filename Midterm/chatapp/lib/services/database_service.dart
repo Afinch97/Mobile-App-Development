@@ -1,7 +1,10 @@
 import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fanpage/models/user.dart';
-import 'package:fanpage/models/post.dart';
+import 'package:chatapp/models/post.dart';
+import 'package:chatapp/models/user.dart';
+import 'package:chatapp/models/chatMessageModel.dart';
+import 'package:chatapp/models/chatUsersModel.dart';
 
 class DatabaseService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -11,25 +14,25 @@ class DatabaseService {
   final StreamController<Map<String, User>> _usersController =
       StreamController<Map<String, User>>();
 
-  final StreamController<List<Post>> _postsController =
+  final StreamController<List<Post>> _convosController =
       StreamController<List<Post>>();
 
   DatabaseService() {
     _firestore.collection('users').snapshots().listen(_usersUpdated);
-    _firestore.collection('posts').snapshots().listen(_postsUpdated);
+    _firestore.collection('posts').snapshots().listen(_convosUpdated);
   }
 
   Stream<Map<String, User>> get users => _usersController.stream;
-  Stream<List<Post>> get posts => _postsController.stream;
+  Stream<List<Post>> get posts => _convosController.stream;
 
   void _usersUpdated(QuerySnapshot<Map<String, dynamic>> snapshot) {
     var users = _getUsersFromSnapshot(snapshot);
     _usersController.add(users);
   }
 
-  void _postsUpdated(QuerySnapshot<Map<String, dynamic>> snapshot) {
+  void _convosUpdated(QuerySnapshot<Map<String, dynamic>> snapshot) {
     var posts = _getPostsFromSnapshot(snapshot);
-    _postsController.add(posts);
+    _convosController.add(posts);
   }
 
   Map<String, User> _getUsersFromSnapshot(

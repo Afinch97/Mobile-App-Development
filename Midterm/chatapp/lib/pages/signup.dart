@@ -1,6 +1,6 @@
-import 'package:fanpage/home.dart';
-import 'package:fanpage/shared.dart';
-import 'package:fanpage/custom/forms/signupform.dart';
+import 'package:chatapp/screens/homePage.dart';
+import 'package:chatapp/shared.dart';
+import 'package:chatapp/custom/forms/signupform.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {

@@ -21,38 +21,44 @@ class LoginPage extends StatelessWidget {
         body: Center(
       child: Form(
           key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _display,
-                validator: (String? value) {},
-              ),
-              TextFormField(
-                controller: _password,
-                obscureText: true,
-                validator: (String? value) {
-                  if (value == null) {
-                    return "Password cannot be empty";
-                  } else if (value.length < 8) {
-                    return "your password must be 8 characters or longer";
-                  }
-                },
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      _login(context);
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: _display,
+                  validator: (String? value) {},
+                ),
+                TextFormField(
+                  controller: _password,
+                  obscureText: true,
+                  validator: (String? value) {
+                    if (value == null) {
+                      return "Password cannot be empty";
+                    } else if (value.length < 8) {
+                      return "your password must be 8 characters or longer";
                     }
                   },
-                  child: const Text("Log In")),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignUpPage()));
-                  },
-                  child: const Text("Register")),
-              TextButton(onPressed: () {}, child: const Text("Forgot Password"))
-            ],
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _login(context);
+                      }
+                    },
+                    child: const Text("Log In")),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpPage()));
+                    },
+                    child: const Text("Register")),
+                TextButton(
+                    onPressed: () {}, child: const Text("Forgot Password"))
+              ],
+            ),
           )),
     ));
   }
@@ -62,13 +68,18 @@ class LoginPage extends StatelessWidget {
       await _auth.signInWithEmailAndPassword(
           email: _email.text, password: _password.text);
       ScaffoldMessenger.of(context).clearSnackBars();
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (BuildContext context) => const HomePage()),
+        ModalRoute.withName('/'),
+      );
     } on FirebaseException catch (e) {
       if (e.code == 'user-not-found' || e.code == 'wrong-password') {
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("Email or password is incorrect")));
       }
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+          context, MaterialPageRoute(builder: (context) => const HomePage()));
       return;
     }
 
